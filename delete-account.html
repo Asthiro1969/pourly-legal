@@ -1,28 +1,81 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>アカウント削除 | Pourly</title><style>
-:root{--bg:#FBF8F4;--ink:#2B1D14;--sub:#7A6A5C;--line:#E8E0D6;--acc:#4A2C1E}
-@media (prefers-color-scheme:dark){:root{--bg:#15110F;--ink:#F3ECE4;--sub:#A39588;--line:#3A302A;--acc:#E1A16A}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;line-height:1.8}
-main{max-width:760px;margin:0 auto;padding:40px 20px 80px}
-header{display:flex;align-items:center;gap:12px;margin-bottom:28px}header img{height:40px}header nav a{margin-left:14px;font-size:14px;color:var(--sub)}
-h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:36px 0 10px;padding-top:12px;border-top:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
-a{color:var(--acc)}footer{margin-top:48px;font-size:13px;color:var(--sub)}
-.note{background:rgba(143,208,238,.15);border:1px solid var(--line);padding:12px 16px;border-radius:12px;font-size:14px}
-</style></head>
-<body><main>
-<header><img src="logo.svg" alt="Pourly"><nav><a href="./">ホーム</a><a href="terms.html">利用規約</a><a href="privacy.html">プライバシーポリシー</a><a href="delete-account.html">アカウント削除</a></nav></header>
-
-<h1>アカウント削除のご案内</h1>
-<p>Pourly のアカウントは、アプリ内の <strong>設定 → アカウント → アカウントを削除する</strong> からいつでも削除できます。削除すると、レシピ・抽出記録・コメント・写真はすべて消え、復元できません。登録した豆の銘柄情報と豆の写真は、他のユーザーと共有されるマスター情報として残ります（プライバシーポリシー 第8条）。</p>
-<h2>アプリを起動できない場合</h2>
-<p>以下の内容を【連絡先メールアドレス】までお送りください。本人確認のうえ、原則 7 日以内に削除します。</p>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アカウント削除の申請 | Pourly</title>
+<meta name="description" content="Pourly のアカウントとデータの削除を申請する方法">
+<link rel="icon" href="/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#FBF8F4;--surface:#FFFFFF;--alt:#F4EEE6;--line:#E8E0D6;--text:#2B1D14;--sub:#7A6A5C;--primary:#4A2C1E;--accent:#C47A45}
+@media (prefers-color-scheme:dark){:root{--bg:#15110F;--surface:#221B18;--alt:#2C2420;--line:#3A302A;--text:#F3ECE4;--sub:#A39588;--primary:#E1A16A;--accent:#C47A45}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;font-size:16px;line-height:1.8}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;gap:10px;height:56px}
+header a.brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:700;font-size:18px}
+header img{width:28px;height:28px;border-radius:6px}
+main{padding:24px 0 48px}
+h1{font-size:24px;line-height:1.4;margin:8px 0 20px}
+h3{font-size:17px;margin:32px 0 8px;padding-top:8px;border-top:1px solid var(--line)}
+p,li{overflow-wrap:anywhere}
+ol,ul{padding-left:1.5em}
+a{color:var(--primary)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--alt)}
+.meta{margin-top:32px;padding:14px 16px;background:var(--alt);border-radius:10px;font-size:14px;color:var(--sub)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.btn{display:inline-block;background:var(--primary);color:var(--bg);text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:20px 0 32px;font-size:14px;color:var(--sub)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
+footer nav a{color:var(--sub)}
+footer nav a[aria-current]{color:var(--text);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/"><img src="/apple-touch-icon.png" alt="">Pourly</a></div></header>
+<main><div class="wrap">
+<h1>Pourly のアカウント削除の申請</h1><p>Pourly のアカウントと、そのアカウントに関するデータの削除を申請できます。</p>
+<p><strong>アプリを使える場合は、アプリから削除できます。</strong>
+設定 →「アカウントを削除する」→「削除する」の順に進むと、その場で削除されます。</p>
+<p><strong>アプリを使えない場合は、メールで申請してください。</strong></p>
+<ol>
+<li>宛先：<a href="mailto:support@asthiro.com">support@asthiro.com</a></li>
+<li>件名：「アカウント削除の申請」</li>
+<li>本文：Pourly のユーザーID（@ で始まるもの。わかる場合）と、ログインに使っていた方法（Google / Apple / メールアドレス）</li>
+<li>
+<p><strong>ログインに使っている Google アカウント、Apple ID、またはメールアドレス（メールで届く確認コードでログインしている場合）から送ってください。</strong> 本人確認のためです。別のアドレスから送られた申請は、本人確認ができるまで削除しません</p>
 <ul>
-<li>件名：アカウント削除の申請</li>
-<li>ログインに使ったサービス（Apple または Google）と、そのメールアドレス</li>
-<li>Pourly のハンドル（@ から始まる ID）</li>
+<li>Apple でログインするときに「メールを非公開」を選んだ場合は、Apple ID のメールアドレスから送ってください。こちらで登録に使われた中継用アドレスと照合します</li>
 </ul>
-<p>削除の完了はメールでお知らせします。</p>
-<footer>© Pourly ／ このページは GitHub Pages で公開しています。</footer>
-</main></body></html>
+</li>
+</ol>
+<p>申請を受け付けたら、受付の連絡をお送りし、<strong>受付から 30 日以内に削除します。</strong> 削除が終わったら、もう一度ご連絡します。</p>
+<h3>削除されるデータ</h3>
+<ul>
+<li>プロフィール（ユーザーID・表示名・自己紹介・アイコン）</li>
+<li>投稿したレシピ、抽出記録、コメント、写真、動画</li>
+<li>いいね、保存、フォロー（フォローしている人・フォロワーの関係）、ブロック、通報の記録</li>
+<li>登録した器具、手元の豆の記録（購入価格・焙煎日を含む）</li>
+<li>通知と、プッシュ通知の宛先</li>
+<li>Apple でログインしていた場合は、Apple とのサインインの連携も解除します</li>
+</ul>
+<h3>削除されずに残るデータ</h3>
+<ul>
+<li>登録したロースターや豆の銘柄の情報と、銘柄に付けた豆の写真。ほかのユーザーと共有する情報のため残ります。登録した人の記録は外れ、あなたと結び付かなくなります</li>
+<li>ほかのユーザーがあなたのレシピで淹れた抽出記録。そのユーザーの投稿として残りますが、あなたのレシピへの参照は外れます</li>
+<li>写真・動画のファイルは、削除の処理のあともしばらく配信の仕組み（キャッシュ）に残り、URL を知っていれば見られることがあります</li>
+</ul>
+<h3>保存期間</h3>
+<ul>
+<li>法令で保存が必要な記録がある場合は、その期間だけ保存し、期間が過ぎたら削除します（現時点で該当するものはありません）</li>
+</ul>
+<p class="meta">運営者：Asthiro（本木 広郎）<br>お問い合わせ：<a href="mailto:support@asthiro.com">support@asthiro.com</a></p>
+</div></main>
+<footer><div class="wrap"><nav><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシーポリシー</a><a href="/delete-account.html" aria-current="page">アカウント削除</a><a href="/support.html">サポート</a></nav>© Asthiro</div></footer>
+</body>
+</html>

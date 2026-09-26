@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pourly</title>
-<meta name="description" content="ハンドドリップのレシピを投稿して、淹れて、記録するアプリ">
+<title>ページが見つかりません | Pourly</title>
+<meta name="description" content="">
 <link rel="icon" href="/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
@@ -39,10 +39,25 @@ footer nav a[aria-current]{color:var(--text);font-weight:700;text-decoration:non
 <body>
 <header><div class="wrap"><a class="brand" href="/"><img src="/apple-touch-icon.png" alt="">Pourly</a></div></header>
 <main><div class="wrap">
-<h1>Pourly</h1>
-<p>ハンドドリップのレシピを投稿して、そのレシピで淹れて、味を記録するアプリです。淹れた記録はレシピの作者に届きます。</p>
-<div class="card"><p style="margin:0">iPhone 版を準備中です。公開したらこのページでお知らせします。</p></div>
-<p>お問い合わせ：<a href="mailto:support@asthiro.com">support@asthiro.com</a></p>
+<div id="r" hidden>
+<h1>Pourly のレシピ</h1>
+<p>このレシピは Pourly アプリで見られます。</p>
+<div class="card"><p style="margin:0" id="r-msg">iPhone 版を準備中です。公開までもう少しお待ちください。</p></div>
+</div>
+<div id="nf">
+<h1>ページが見つかりません</h1>
+<p><a href="/">トップページへ</a></p>
+</div>
+<script>
+// 共有 URL /r/<レシピID> の受け口。App Store 公開後に APP_STORE_URL を入れると自動で転送する。
+var APP_STORE_URL = '';
+if (/^\/r\/[^/]+\/?$/.test(location.pathname)) {
+  document.getElementById('r').hidden = false;
+  document.getElementById('nf').hidden = true;
+  document.title = 'Pourly のレシピ';
+  if (APP_STORE_URL) { location.replace(APP_STORE_URL); }
+}
+</script>
 
 </div></main>
 <footer><div class="wrap"><nav><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシーポリシー</a><a href="/delete-account.html">アカウント削除</a><a href="/support.html">サポート</a></nav>© Asthiro</div></footer>

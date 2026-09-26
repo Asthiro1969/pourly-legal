@@ -1,16 +1,16 @@
 # pourly-legal
 
-規約・プライバシーポリシー・アカウント削除案内の公開ページ（GitHub Pages 用）。
+Pourly の公開ページ（GitHub Pages＋独自ドメイン **https://pourly.asthiro.com**）。
 
-## 公開手順（5 分）
+| URL | 中身 |
+|---|---|
+| /terms.html | 利用規約 |
+| /privacy.html | プライバシーポリシー |
+| /delete-account.html | アカウント削除の申請 |
+| /support.html | サポート（support@asthiro.com・よくある質問） |
+| /r/<レシピID> | 共有 URL の受け口（404.html が処理。`APP_STORE_URL` を入れると App Store へ転送） |
 
-1. GitHub で `pourly-legal` という **public** リポジトリを作る
-2. このフォルダの中身をそのまま push する
-3. リポジトリの Settings → Pages → Source を「Deploy from a branch」、Branch を `main` / `(root)` にして Save
-4. 数分後に `https://<ユーザー名>.github.io/pourly-legal/` で開ける
-5. `terms.html` `privacy.html` の URL を Google Cloud の OAuth 同意画面と `.env` の `EXPO_PUBLIC_TERMS_URL` / `EXPO_PUBLIC_PRIVACY_URL` に入れる
+文面の元は Pourly リポジトリの `docs/10_terms_privacy.md` と `docs/legal-delete-request.md`。
+HTML は手元の `_build/build.py` で生成する（`_build` は GitHub に上げない）。
 
-## 公開前に埋めるもの
-
-- 【運営者氏名】【連絡先メールアドレス】【制定日】（3 ファイル共通。エディタの全置換で）
-- 埋めたら各ページ冒頭の「この文書は草案です」の段落（`class="note"`）を消す
+運営者：Asthiro（本木 広郎）
