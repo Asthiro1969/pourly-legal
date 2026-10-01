@@ -12,6 +12,6 @@ Pourly の公開ページ（GitHub Pages＋独自ドメイン **https://pourly.a
 | /og.png | 共有 URL のプレビュー画像（全レシピ共通、1200×630。build.py がロゴから作る） |
 
 文面の元は Pourly リポジトリの `docs/10_terms_privacy.md` と `docs/legal-delete-request.md`。
-HTML は手元の `_build/build.py` で生成する（`_build` は GitHub に上げない）：`python3 _build/build.py . 2026年9月26日`（第 2 引数は規約の制定日）。
+HTML は手元の `_build/build.py` で生成する（`_build` は GitHub に上げない）：`python3 _build/build.py . 2026年9月26日 2026年10月1日`（第 2 引数は制定日、第 3 引数は最終改定日。省略すると改定日は出ない）。
 
 運営者：Asthiro（本木 広郎）
