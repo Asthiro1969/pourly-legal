@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["W8CQS92667.jp.motoki.pourly"],
+        "components": [
+          { "/": "/r/index.html", "exclude": true },
+          { "/": "/r/recipe.js", "exclude": true },
+          { "/": "/r/*", "comment": "レシピの共有 URL" }
+        ]
+      }
+    ]
+  }
+}
