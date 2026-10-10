@@ -6,7 +6,7 @@
   'use strict';
   var SUPABASE_URL = 'https://kqtmmfrxwzslkwvseeyp.supabase.co';
   var SUPABASE_KEY = 'sb_publishable_02ZcdeU1mELaRkfiDuvwLg_RGbqwyQ5';
-  var APP_STORE_URL = '';
+  var APP_STORE_URL = 'https://apps.apple.com/jp/app/id6819269907';
 
   var L = {
     dripper: { v60: 'V60', kalita_wave: 'カリタ ウェーブ', origami: 'ORIGAMI', melitta: 'メリタ', kono: 'KONO', chemex: 'ケメックス', flat_bottom: 'フラットボトム', switch: 'スイッチ', clever: 'クレバー', french_press: 'フレンチプレス', aeropress: 'エアロプレス', cupping_bowl: 'カッピングボウル', siphon: 'サイフォン', cold_brew_bottle: '水出しボトル', other: 'その他' },
