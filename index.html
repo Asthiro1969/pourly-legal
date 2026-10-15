@@ -58,7 +58,7 @@ a{color:inherit}
 .top-get:hover{transform:translateY(-1px)}
 
 /* ---------- the pour line ---------- */
-.pour{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);background:var(--line);pointer-events:none;z-index:0}
+.pour{position:absolute;left:max(8px,env(safe-area-inset-left,0px),calc(50% - 540px));top:0;bottom:0;width:2px;transform:none;background:var(--line);pointer-events:none;z-index:0}
 .pour i{position:absolute;inset:0;background:var(--pour);transform-origin:top;transform:scaleY(var(--p,1))}
 .flow{position:relative}
 
