@@ -24,21 +24,21 @@
   --sub:#7A6A5C;
   --espresso:#4A2C1E;
   --caramel:#C47A45;
-  --water:#8DCDEB;
+  --water:#8FD0EE;
   --on-espresso:#FBF8F4;
   --phone:#1C1512;
   --shadow:43 29 20;
-  --pour:linear-gradient(180deg,#EAF6FC 0%,#8DCDEB 22%,#D9A066 52%,#8A5A3C 78%,#482A1E 100%);
+  --pour:linear-gradient(180deg,#F2F9FD 0%,#8FD0EE 22%,#D9A066 52%,#8C5A3C 78%,#4A2C1E 100%);
   --f-display:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
   --f-body:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
   --f-num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#15110F;--paper:#1E1815;--alt:#2A221E;--line:#3A302A;--ink:#F3ECE4;--sub:#A39588;
-  --espresso:#E1A16A;--caramel:#D58B55;--water:#8DCDEB;--on-espresso:#1A120D;--phone:#0B0908;--shadow:0 0 0;color-scheme:dark}}
+  --bg:#15110F;--paper:#221B18;--alt:#2C2420;--line:#3A302A;--ink:#F3ECE4;--sub:#A39588;
+  --espresso:#E1A16A;--caramel:#D58B55;--water:#8FD0EE;--on-espresso:#1A120D;--phone:#0B0908;--shadow:0 0 0;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#15110F;--paper:#1E1815;--alt:#2A221E;--line:#3A302A;--ink:#F3ECE4;--sub:#A39588;
-  --espresso:#E1A16A;--caramel:#D58B55;--water:#8DCDEB;--on-espresso:#1A120D;--phone:#0B0908;--shadow:0 0 0;color-scheme:dark}
+  --bg:#15110F;--paper:#221B18;--alt:#2C2420;--line:#3A302A;--ink:#F3ECE4;--sub:#A39588;
+  --espresso:#E1A16A;--caramel:#D58B55;--water:#8FD0EE;--on-espresso:#1A120D;--phone:#0B0908;--shadow:0 0 0;color-scheme:dark}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -66,10 +66,10 @@ a{color:inherit}
 .hero{position:relative;padding-block:56px 40px;overflow-x:clip}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sub);margin:0 0 18px}
-.eyebrow::before{content:"";width:28px;height:3px;border-radius:2px;background:var(--pour);background:linear-gradient(90deg,#8DCDEB,#D9A066,#482A1E)}
+.eyebrow::before{content:"";width:28px;height:3px;border-radius:2px;background:var(--pour);background:linear-gradient(90deg,#8FD0EE,#D9A066,#4A2C1E)}
 h1 .nb{display:inline-block;white-space:nowrap}
 h1{font-family:var(--f-display);font-weight:900;font-size:clamp(32px,5vw,62px);line-height:1.12;letter-spacing:-.02em;margin:0 0 22px;text-wrap:balance}
-h1 .drip{background:linear-gradient(180deg,#8DCDEB 0%,#C9925E 55%,#4A2C1E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .drip{background:linear-gradient(180deg,#8FD0EE 0%,#C9925E 55%,#4A2C1E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:17px;color:var(--sub);max-width:30em;margin:0 0 30px}
 .get{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .icon-link{--s:88px;position:relative;display:block;width:var(--s);height:var(--s);flex:0 0 auto;text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
@@ -78,8 +78,8 @@ h1 .drip{background:linear-gradient(180deg,#8DCDEB 0%,#C9925E 55%,#4A2C1E 100%);
 .icon-link::after{content:"タップで App Store";position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--sub)}
 /* しずく：水色が上から落ちてドリッパーに入り、色が満ち、茶色の一滴が落ちる */
 .water,.drop{position:absolute;left:50%;width:calc(var(--s)*.11);height:calc(var(--s)*.11);margin-left:calc(var(--s)*-.055);border-radius:50%;opacity:0;pointer-events:none;transform-origin:50% 100%}
-.water{top:0;z-index:2;background:#8DCDEB}
-.drop{top:calc(var(--s)*.70);z-index:0;background:#482A1E}
+.water{top:0;z-index:2;background:#8FD0EE}
+.drop{top:calc(var(--s)*.70);z-index:0;background:#4A2C1E}
 .water::before,.drop::before{content:"";position:absolute;left:50%;top:-30%;width:70.7%;height:70.7%;transform:translateX(-50%) rotate(45deg);background:inherit;border-radius:10% 0 50% 0}
 .ripple{position:absolute;left:50%;top:calc(var(--s)*1.14);width:calc(var(--s)*.42);height:calc(var(--s)*.1);margin-left:calc(var(--s)*-.21);border:1.5px solid var(--caramel);border-radius:50%;opacity:0;pointer-events:none}
 .mark .level{transform-box:fill-box;transform-origin:50% 0}
@@ -251,12 +251,12 @@ footer .sns svg{width:18px;height:18px}
         <p class="lead">注ぐ量とタイミングは、タイマーが音と振動で知らせます。淹れたら、味を 6 つの軸で記録。前回の一杯が、次の一杯の目安になります。</p>
         <div class="get">
           <a class="icon-link play" data-store href="https://apps.apple.com/app/apple-store/id6819269907?pt=129561988&amp;ct=web_top&amp;mt=8" aria-label="Pourly を App Store で見る"><span class="water" aria-hidden="true"></span><svg class="mark" class="anim" viewBox="0 0 1024 1024" role="img" aria-label="Pourly のアプリアイコン">
-<defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="0" y1="228" x2="0" y2="662"><stop offset="0" stop-color="#F2F9FD"/><stop offset=".32" stop-color="#8DCDEB"/><stop offset=".58" stop-color="#DCA062"/><stop offset=".82" stop-color="#8A5A3C"/><stop offset="1" stop-color="#4A2C1E"/></linearGradient>
+<defs><linearGradient id="gh" gradientUnits="userSpaceOnUse" x1="0" y1="228" x2="0" y2="662"><stop offset="0" stop-color="#F2F9FD"/><stop offset=".32" stop-color="#8FD0EE"/><stop offset=".58" stop-color="#D9A066"/><stop offset=".82" stop-color="#8C5A3C"/><stop offset="1" stop-color="#4A2C1E"/></linearGradient>
 <clipPath id="ch"><rect class="level" x="0" y="228" width="1024" height="440"/></clipPath></defs>
 <rect width="1024" height="1024" rx="236" fill="#FBF8F4"/>
 <path class="ghost" d="M270 228H754Q782 228 772 256L640 640Q632 662 610 662H414Q392 662 384 640L252 256Q242 228 270 228Z" fill="#ECE3D8"/>
 <path d="M270 228H754Q782 228 772 256L640 640Q632 662 610 662H414Q392 662 384 640L252 256Q242 228 270 228Z" fill="url(#gh)" clip-path="url(#ch)"/>
-<path class="bead" d="M512 668C512 668 446 756 446 792A66 66 0 0 0 578 792C578 756 512 668 512 668Z" fill="#482A1E"/>
+<path class="bead" d="M512 668C512 668 446 756 446 792A66 66 0 0 0 578 792C578 756 512 668 512 668Z" fill="#4A2C1E"/>
 </svg><span class="drop" aria-hidden="true"></span><span class="ripple" aria-hidden="true"></span></a>
           <a class="badge-official" data-store href="https://apps.apple.com/app/apple-store/id6819269907?pt=129561988&amp;ct=web_top&amp;mt=8"><img src="/img/app-store-badge-ja.svg" alt="App Store からダウンロード" height="56"></a>
         </div>
@@ -375,12 +375,12 @@ footer .sns svg{width:18px;height:18px}
       <div class="wrap">
         <div class="cup">
           <a class="icon-link once" id="finalIcon" data-store href="https://apps.apple.com/app/apple-store/id6819269907?pt=129561988&amp;ct=web_top&amp;mt=8" aria-label="Pourly を App Store で見る"><svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Pourly のアプリアイコン">
-<defs><linearGradient id="gf" gradientUnits="userSpaceOnUse" x1="0" y1="228" x2="0" y2="662"><stop offset="0" stop-color="#F2F9FD"/><stop offset=".32" stop-color="#8DCDEB"/><stop offset=".58" stop-color="#DCA062"/><stop offset=".82" stop-color="#8A5A3C"/><stop offset="1" stop-color="#4A2C1E"/></linearGradient>
+<defs><linearGradient id="gf" gradientUnits="userSpaceOnUse" x1="0" y1="228" x2="0" y2="662"><stop offset="0" stop-color="#F2F9FD"/><stop offset=".32" stop-color="#8FD0EE"/><stop offset=".58" stop-color="#D9A066"/><stop offset=".82" stop-color="#8C5A3C"/><stop offset="1" stop-color="#4A2C1E"/></linearGradient>
 <clipPath id="cf"><rect class="level" x="0" y="228" width="1024" height="440"/></clipPath></defs>
 <rect width="1024" height="1024" rx="236" fill="#FBF8F4"/>
 <path class="ghost" d="M270 228H754Q782 228 772 256L640 640Q632 662 610 662H414Q392 662 384 640L252 256Q242 228 270 228Z" fill="#ECE3D8"/>
 <path d="M270 228H754Q782 228 772 256L640 640Q632 662 610 662H414Q392 662 384 640L252 256Q242 228 270 228Z" fill="url(#gf)" clip-path="url(#cf)"/>
-<path class="bead" d="M512 668C512 668 446 756 446 792A66 66 0 0 0 578 792C578 756 512 668 512 668Z" fill="#482A1E"/>
+<path class="bead" d="M512 668C512 668 446 756 446 792A66 66 0 0 0 578 792C578 756 512 668 512 668Z" fill="#4A2C1E"/>
 </svg><span class="drop" aria-hidden="true"></span><span class="ripple" aria-hidden="true"></span></a>
         </div>
         <h2>今日の一杯から、<br>はじめよう。</h2>
