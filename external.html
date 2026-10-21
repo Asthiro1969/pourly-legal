@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>外部送信について | Pourly</title>
+<meta name="description" content="Pourly のアプリから外部へ送る情報と送り先">
+<link rel="icon" href="/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--bg:#FBF8F4;--surface:#FFFFFF;--alt:#F4EEE6;--line:#E8E0D6;--text:#2B1D14;--sub:#7A6A5C;--primary:#4A2C1E;--accent:#C47A45}
+@media (prefers-color-scheme:dark){:root{--bg:#15110F;--surface:#221B18;--alt:#2C2420;--line:#3A302A;--text:#F3ECE4;--sub:#A39588;--primary:#E1A16A;--accent:#C47A45}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;font-size:16px;line-height:1.8}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;gap:10px;height:56px}
+header a.brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:700;font-size:18px}
+header img{width:28px;height:28px;border-radius:6px}
+main{padding:24px 0 48px}
+h1{font-size:24px;line-height:1.4;margin:8px 0 20px}
+h3{font-size:17px;margin:32px 0 8px;padding-top:8px;border-top:1px solid var(--line)}
+p,li{overflow-wrap:anywhere}
+ol,ul{padding-left:1.5em}
+a{color:var(--primary)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--alt)}
+.meta{margin-top:32px;padding:14px 16px;background:var(--alt);border-radius:10px;font-size:14px;color:var(--sub)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.btn{display:inline-block;background:var(--primary);color:var(--bg);text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:20px 0 32px;font-size:14px;color:var(--sub)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
+footer nav a{color:var(--sub)}
+footer nav a[aria-current]{color:var(--text);font-weight:700;text-decoration:none}
+/* レシピページ（/r/） */
+.eyebrow{margin:0;font-size:13px;color:var(--sub);font-weight:700;letter-spacing:.04em}
+.author{margin:-8px 0 12px;color:var(--sub);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.chip{display:inline-block;background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px}
+#recipe-root h2{font-size:18px;margin:28px 0 8px}
+.spec{margin:0;padding:4px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.spec .kv{display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.spec .kv:first-child{border-top:0}
+.spec dt{flex:0 0 5em;color:var(--sub);font-size:14px;padding-top:2px}
+.spec dd{margin:0;flex:1;overflow-wrap:anywhere}
+table.steps{display:table}
+table.steps td:first-child,table.steps td:nth-child(2){white-space:nowrap;font-variant-numeric:tabular-nums}
+.sub{color:var(--sub);font-size:13px}
+.memo{color:var(--sub);font-size:13px;margin-top:2px}
+.note{white-space:pre-wrap}
+.source{font-size:14px;color:var(--sub)}
+.stat{text-align:center}
+.stat .big{margin:0 0 4px;font-weight:700}
+.stat .sub{margin:4px 0 0}
+.radar{width:280px;max-width:100%;height:auto;margin:8px auto 0;display:block}
+.radar .grid{fill:none;stroke:var(--line);stroke-width:1}
+.radar .shape{fill:var(--accent);fill-opacity:.25;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.radar text{font-size:11px;fill:var(--sub)}
+.cta{text-align:center;margin:20px 0}
+.cta .btn{padding:12px 28px;font-size:16px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/"><img src="/apple-touch-icon.png" alt="">Pourly</a></div></header>
+<main><div class="wrap">
+<h1>外部送信について</h1>
+<p>Pourly のアプリは、サービスの提供や改善のために、利用者の端末から次の事業者へ情報を送っています。各事業者での情報の扱いは、それぞれのプライバシーポリシーによります。</p>
+<h3>Meta Platforms, Inc.（Meta の SDK）</h3>
+<p><strong>送る情報</strong><br>Meta の仕組みが端末ごとに付ける ID、端末の情報（端末の種類、OS の版など）、アプリの起動などの操作の記録、通信の際の IP アドレス。iPhone の「トラッキングを許可しますか」で許可した場合は、広告の識別子（IDFA）も送ります。</p>
+<p><strong>利用目的</strong><br>Instagram などに出す Pourly の広告の効果の測定と改善</p>
+<p><strong>備考</strong><br>許可しなくても、すべての機能をそのまま使えます。許可は iPhone の「設定」→「プライバシーとセキュリティ」→「トラッキング」からいつでも変えられます。</p>
+<p><strong>Meta のプライバシーポリシー</strong><br><a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></p>
+<h3>Supabase, Inc.</h3>
+<p><strong>送る情報</strong><br>ログインの情報、利用者が入力・投稿した内容（プロフィール、レシピ、抽出記録、コメント、写真、動画など）、いいね・保存・フォローなどの操作の記録、通信の際の IP アドレス、端末と OS の種類</p>
+<p><strong>利用目的</strong><br>本サービスのデータの保管と提供（ログイン、表示、投稿など、本サービスの機能そのもの）</p>
+<h3>Google LLC</h3>
+<p><strong>送る情報</strong><br>Google のアカウントでログインするときに、ログインに必要な情報</p>
+<p><strong>利用目的</strong><br>Google のアカウントでのログイン（Google でログインを選んだ場合だけ）</p>
+<h3>Apple Inc.</h3>
+<p><strong>送る情報</strong><br>Apple でサインインするときに、サインインに必要な情報。通知を許可した場合は、通知を届けるための端末の登録の情報</p>
+<p><strong>利用目的</strong><br>Apple のアカウントでのサインイン（Apple でサインインを選んだ場合だけ）、プッシュ通知の配信</p>
+<h3>650 Industries, Inc.（Expo）</h3>
+<p><strong>送る情報</strong><br>通知を許可した場合に、プッシュ通知用の端末トークンとアプリの識別子</p>
+<p><strong>利用目的</strong><br>プッシュ通知の配信</p>
+<p style="margin-top:32px">このページの内容は、本サービスの<a href="/privacy.html">プライバシーポリシー（https://pourly.asthiro.com/privacy.html）</a>の一部です。お問い合わせは <a href="mailto:support@asthiro.com">support@asthiro.com</a> までご連絡ください。</p>
+<p class="meta">最終改定日：2026年〇月〇日<br>運営者：Asthiro（本木 広郎）</p>
+
+</div></main>
+<footer><div class="wrap"><nav><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシーポリシー</a><a href="/delete-account.html">アカウント削除</a><a href="/support.html">サポート</a></nav>© Asthiro</div></footer>
+</body>
+</html>
