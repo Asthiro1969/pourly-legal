@@ -1,7 +1,9 @@
 /* Pourly 共有 URL /r/<レシピID> のレシピページ（閲覧のみ・ログインなし）。
  * anon（publishable）キーで Supabase を読む。RLS で public / unlisted だけが返る。
  * 非公開・削除済み・存在しない ID はどれも同じ「このレシピは見られません」を出す。
- * APP_STORE_URL が空の間は「iPhone 版を準備中」。入れると「App Store で入手」ボタンになる。 */
+ * APP_STORE_URL が空の間は「iPhone 版を準備中」。入れると「App Store で入手」ボタンになる。
+ * 器具の名前・氷の 1 行はアプリ 1.2 の recipeDripperLabel / iceMethodLine と同じ（2026-10-29）。
+ * 表示を作る純粋関数は node からも読める（module.exports。確かめは _build/recipe.test.js）。 */
 (function () {
   'use strict';
   var SUPABASE_URL = 'https://kqtmmfrxwzslkwvseeyp.supabase.co';
@@ -9,7 +11,7 @@
   var APP_STORE_URL = 'https://apps.apple.com/jp/app/id6819269907';
 
   var L = {
-    dripper: { v60: 'V60', kalita_wave: 'カリタ ウェーブ', origami: 'ORIGAMI', melitta: 'メリタ', kono: 'KONO', chemex: 'ケメックス', flat_bottom: 'フラットボトム', switch: 'スイッチ', clever: 'クレバー', french_press: 'フレンチプレス', aeropress: 'エアロプレス', cupping_bowl: 'カッピングボウル', siphon: 'サイフォン', cold_brew_bottle: '水出しボトル', other: 'その他' },
+    dripper: { v60: 'HARIO V60', kalita_wave: 'カリタ ウェーブ', origami: 'ORIGAMI', melitta: 'メリタ', kono: 'KONO 名門', chemex: 'ケメックス', flat_bottom: '平底（その他）', switch: 'HARIO スイッチ', clever: 'クレバー', french_press: 'フレンチプレス', aeropress: 'エアロプレス', cupping_bowl: 'カッピングボウル', siphon: 'サイフォン', cold_brew_bottle: '水出しボトル', other: 'その他' },
     method: { pour_over: '透過', immersion: '浸漬', hybrid: 'ハイブリッド', cold_brew: 'コールドブリュー' },
     serve: { hot: 'ホット', iced: 'アイス', milk: 'ミルク' },
     grind: { coarse: '粗挽き', medium_coarse: '中粗挽き', medium: '中挽き', medium_fine: '中細挽き', fine: '細挽き' },
@@ -17,12 +19,13 @@
     process: { washed: 'ウォッシュド', natural: 'ナチュラル', honey: 'ハニー', anaerobic: 'アナエロビック', other: 'その他' },
     action: { bloom: '蒸らし', pour: '注ぐ', wait: '待つ', swirl: 'ゆする', stir: 'かき混ぜる', break: '表面を崩す', close: '弁を閉じる', release: '弁を開ける', flip: 'ひっくり返す', press: 'プレスする', remove: '器具を外す' },
     pour: { center: '中心に', circle: '円を描く', spiral: '中心から外へ', edge: 'ふちに沿って' },
-    flow: { thin: '細く', normal: '普通', thick: '太く' }
+    flow: { thin: '細く', normal: '普通', thick: '太く' },
+    // 器具の形（recipes.dripper_shape。アプリの dripperShape.ts）
+    shape: { cone: '円すい', trapezoid: '台形', flat: '平底', valve: '弁つき', press: 'プレス', other: 'その他' }
   };
+  var ANY_DRIPPER = '器具を問わない';
   var AXES = [['acidity', '酸味'], ['sweetness', '甘さ'], ['bitterness', '苦味'], ['body', 'ボディ'], ['aftertaste', '余韻'], ['cleanliness', 'クリーンさ']];
 
-  var root = document.getElementById('recipe-root');
-  if (!root) return;
 
   function el(tag, attrs, children) {
     var e = document.createElement(tag);
@@ -34,6 +37,44 @@
   function num(n) { if (n == null) return ''; var v = Number(n); return Number.isInteger(v) ? String(v) : String(Math.round(v * 10) / 10); }
   function mmss(sec) { if (sec == null) return ''; sec = Math.round(sec); return Math.floor(sec / 60) + ':' + ('0' + (sec % 60)).slice(-2); }
   function ratio(dose, water) { if (!dose || !water) return ''; var r = water / dose; return '1:' + (Number.isInteger(r) ? r : Math.round(r * 10) / 10); }
+
+  // アプリの formatGrams と同じ（小数 1 桁に丸め、整数なら整数で）
+  function grams(g) { var r = Math.round(g * 10) / 10; return Number.isInteger(r) ? String(r) : r.toFixed(1); }
+
+  /** 器具の欄：器具（その他はメモ）→ 形の名前 → 「器具を問わない」（アプリの recipeDripperLabel） */
+  function dripperLabel(r) {
+    if (r.dripper) {
+      var note = r.dripper_note && String(r.dripper_note).trim();
+      return r.dripper === 'other' && note ? note : label(L.dripper, r.dripper);
+    }
+    return (r.dripper_shape && L.shape[r.dripper_shape]) || ANY_DRIPPER;
+  }
+
+  /**
+   * 氷の下の 1 行（アプリの iceMethodLine。グラス＝ice_g − ice_server_g）。
+   * ice_method の列が無いデータ（1.2 の DB を流す前）は何も出さない。知らない値は server_first（アプリの toIceMethod）
+   */
+  function iceLine(r) {
+    if (r.serve_style !== 'iced' || !('ice_method' in r)) return null;
+    var m = ['server_first', 'after_brew', 'split', 'none'].indexOf(r.ice_method) >= 0 ? r.ice_method : 'server_first';
+    if (m === 'server_first') return '氷はサーバーに先に入れます。';
+    if (m === 'after_brew') return '落ち切ってから氷の入ったグラスに注ぎます。';
+    if (m === 'none') return null;
+    var ice = r.ice_g == null ? null : Number(r.ice_g), server = r.ice_server_g == null ? null : Number(r.ice_server_g);
+    if (ice != null && server != null && isFinite(ice) && isFinite(server) && ice > 0 && server >= 0 && server <= ice) {
+      return '氷はサーバーに ' + grams(server) + 'g、グラスに ' + grams(Math.round((ice - server) * 10) / 10) + 'g（合わせて ' + grams(ice) + 'g）。';
+    }
+    if (ice != null && ice > 0) return '氷は合わせて ' + grams(ice) + 'g。分け方はメモを見てください。';
+    return '氷はサーバーとグラスに分けます。';
+  }
+
+  /** 器具などのチップ（抽出方法・器具・提供スタイル） */
+  function chipTexts(r) { return [label(L.method, r.brew_method), dripperLabel(r), label(L.serve, r.serve_style)].filter(Boolean); }
+
+  if (typeof module !== 'undefined' && module.exports) module.exports = { dripperLabel: dripperLabel, iceLine: iceLine, chipTexts: chipTexts, grams: grams };
+  if (typeof document === 'undefined') return;
+  var root = document.getElementById('recipe-root');
+  if (!root) return;
 
   function appButton() {
     if (APP_STORE_URL) return el('p', { class: 'cta' }, [el('a', { class: 'btn', href: APP_STORE_URL, text: 'App Store で入手' })]);
@@ -100,13 +141,14 @@
     root.appendChild(el('h1', { text: r.title }));
     if (p) root.appendChild(el('p', { class: 'author', text: p.display_name + '（@' + p.handle + '）' }));
 
-    var chips = [label(L.method, r.brew_method), r.dripper === 'other' && r.dripper_note ? r.dripper_note : label(L.dripper, r.dripper), label(L.serve, r.serve_style)].filter(Boolean);
-    root.appendChild(el('p', { class: 'chips' }, chips.map(function (t) { return el('span', { class: 'chip', text: t }); })));
+    root.appendChild(el('p', { class: 'chips' }, chipTexts(r).map(function (t) { return el('span', { class: 'chip', text: t }); })));
 
     var dl = el('dl', { class: 'spec' });
     var dose = Number(r.dose_g), water = Number(r.water_g);
     dl.appendChild(row('豆：湯', num(r.dose_g) + ' g : ' + num(r.water_g) + ' g（' + ratio(dose, water) + '）'));
     if (r.serve_style === 'iced' && r.ice_g) dl.appendChild(row('氷', num(r.ice_g) + ' g（豆:湯+氷 ' + ratio(dose, water + Number(r.ice_g)) + '）'));
+    var il = iceLine(r);
+    if (il) dl.appendChild(row('氷の入れ方', il));
     if (r.serve_style === 'milk' && r.milk_ml) dl.appendChild(row('ミルク', num(r.milk_ml) + ' ml'));
     if (r.water_temp_c != null) dl.appendChild(row('湯温', num(r.water_temp_c) + '℃'));
     var grind = label(L.grind, r.grind);
@@ -175,7 +217,8 @@
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) { renderNotFound(); return; }
   id = id.toLowerCase();
 
-  var sel = 'id,title,dripper,dripper_note,dose_g,water_g,water_temp_c,grind,grinder_model,grinder_clicks,total_time_sec,note,source_type,source_name,source_url,brew_method,serve_style,ice_g,milk_ml,steep_minutes,brew_log_count,avg_rating,' +
+  // 列は * で読む（1.2 の DB を流す前後のどちらでも壊れない。dripper_shape・ice_method などは有れば使う）
+  var sel = '*,' +
     'profiles!recipes_user_id_fkey(handle,display_name),bean_profiles(name,roast,origin_country,process,roasters(name)),recipe_steps(position,start_sec,cumulative_water_g,action,memo,pour_style,flow_rate)';
   Promise.all([
     fetchJson('recipes?select=' + encodeURIComponent(sel) + '&id=eq.' + id + '&limit=1'),
