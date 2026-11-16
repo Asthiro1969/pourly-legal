@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-16T23:15:00+09:00",
+  "items": [
+    {
+      "id": "hario-v60-dripper",
+      "store": "amazon",
+      "name": "HARIO V60 透過ドリッパー",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0BWHKPF89?tag=asthiro-22",
+      "art": "dripper_cone"
+    },
+    {
+      "id": "kalita-wave-dripper",
+      "store": "amazon",
+      "name": "カリタ ウェーブドリッパー",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0991SLKW5?tag=asthiro-22",
+      "art": "dripper_flat"
+    },
+    {
+      "id": "origami-dripper",
+      "store": "amazon",
+      "name": "ORIGAMI ドリッパー エアー S",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0F9YWTBJJ?tag=asthiro-22",
+      "art": "dripper_cone"
+    },
+    {
+      "id": "hario-switch",
+      "store": "amazon",
+      "name": "HARIO スイッチ",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B07NS2SV3W?tag=asthiro-22",
+      "art": "dripper_valve"
+    },
+    {
+      "id": "hario-v60-filter",
+      "store": "amazon",
+      "name": "HARIO V60 用ペーパーフィルター",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B001U7EOYA?tag=asthiro-22",
+      "art": "filter"
+    },
+    {
+      "id": "kalita-wave-filter",
+      "store": "amazon",
+      "name": "カリタ ウェーブフィルター",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0CQY2XK2M?tag=asthiro-22",
+      "art": "filter"
+    },
+    {
+      "id": "cafec-abaca-filter",
+      "store": "amazon",
+      "name": "CAFEC アバカ ペーパーフィルター",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B076MCYZ9R?tag=asthiro-22",
+      "art": "filter"
+    },
+    {
+      "id": "hario-v60-kettle-buono",
+      "store": "amazon",
+      "name": "HARIO V60 ドリップケトル・ヴォーノ",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0BWGXG5GN?tag=asthiro-22",
+      "art": "kettle"
+    },
+    {
+      "id": "hario-ceramic-slim",
+      "store": "amazon",
+      "name": "HARIO コーヒーミル・セラミックスリム",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B001804CLY?tag=asthiro-22",
+      "art": "grinder"
+    },
+    {
+      "id": "timemore-c3",
+      "store": "amazon",
+      "name": "TIMEMORE C3S",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0C1FZG34T?tag=asthiro-22",
+      "art": "grinder"
+    },
+    {
+      "id": "hario-v60-scale",
+      "store": "amazon",
+      "name": "HARIO V60 ドリップスケール",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B08VRSZVN4?tag=asthiro-22",
+      "art": "scale"
+    },
+    {
+      "id": "tanita-kc-2g01",
+      "store": "amazon",
+      "name": "タニタ コーヒースケール KC-2G01",
+      "note": "",
+      "url": "https://www.amazon.co.jp/dp/B0GNPBWGVN?tag=asthiro-22",
+      "art": "scale"
+    }
+  ]
+}
