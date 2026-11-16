@@ -3,6 +3,7 @@
  * 非公開・削除済み・存在しない ID はどれも同じ「このレシピは見られません」を出す。
  * APP_STORE_URL が空の間は「iPhone 版を準備中」。入れると「App Store で入手」ボタンになる。
  * 器具の名前・氷の 1 行はアプリ 1.2 の recipeDripperLabel / iceMethodLine と同じ（2026-10-29）。
+ * 「お湯:氷」・ミルクの g・数字の丸めはアプリ 1.2 のレシピ詳細と同じ（waterIceRatioText・formatGrams・formatRatio。2026-11-16 impl-v68-03）。
  * 表示を作る純粋関数は node からも読める（module.exports。確かめは _build/recipe.test.js）。 */
 (function () {
   'use strict';
@@ -34,12 +35,38 @@
     return e;
   }
   function label(map, key, fallback) { return (key && map[key]) || fallback || key || ''; }
-  function num(n) { if (n == null) return ''; var v = Number(n); return Number.isInteger(v) ? String(v) : String(Math.round(v * 10) / 10); }
+  function num(n) { if (n == null) return ''; return grams(Number(n)); }
   function mmss(sec) { if (sec == null) return ''; sec = Math.round(sec); return Math.floor(sec / 60) + ':' + ('0' + (sec % 60)).slice(-2); }
-  function ratio(dose, water) { if (!dose || !water) return ''; var r = water / dose; return '1:' + (Number.isInteger(r) ? r : Math.round(r * 10) / 10); }
-
   // アプリの formatGrams と同じ（小数 1 桁に丸め、整数なら整数で）
   function grams(g) { var r = Math.round(g * 10) / 10; return Number.isInteger(r) ? String(r) : r.toFixed(1); }
+
+  function round2(n) { return Math.round(n * 100) / 100; }
+  /** アプリの formatRatio と同じ（湯量 / 粉量〈小数 2 桁〉を「1:16.7」に。端数があれば小数 1 桁） */
+  function formatRatio(r) { if (r == null || !isFinite(r)) return '—'; var v = Math.round(r * 10) / 10; return '1:' + (Number.isInteger(v) ? String(v) : v.toFixed(1)); }
+  /** 豆:湯。DB の生成列 ratio（小数 2 桁）があればそれを、無ければ water / dose を小数 2 桁に丸めて（アプリの ratioLines の brew） */
+  function brewRatioText(r) {
+    if (r.ratio != null && isFinite(Number(r.ratio))) return formatRatio(Number(r.ratio));
+    var dose = Number(r.dose_g), water = Number(r.water_g);
+    return dose > 0 && isFinite(water) ? formatRatio(round2(water / dose)) : formatRatio(null);
+  }
+  /** 豆:湯+氷（アプリの icedTotalRatio → formatRatio）。氷か粉量が無ければ null */
+  function icedTotalRatioText(r) {
+    var dose = Number(r.dose_g), water = Number(r.water_g), ice = r.ice_g == null ? NaN : Number(r.ice_g);
+    if (!(dose > 0) || !isFinite(water) || !(ice > 0)) return null;
+    return formatRatio(round2((water + ice) / dose));
+  }
+  function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+  /** お湯:氷（アプリの waterIceRatioText。BUG-039）。両方 10 以下の整数の比なら「3:2」、収まらなければ大きい方を小数 1 桁・小さい方を 1 に */
+  function waterIceRatioText(waterG, iceG) {
+    if (waterG == null || iceG == null) return null;
+    var wg = Number(waterG), ig = Number(iceG);
+    if (!isFinite(wg) || !isFinite(ig) || !(wg > 0) || !(ig > 0)) return null;
+    var w = Math.round(wg * 10), i = Math.round(ig * 10);
+    if (w === 0 || i === 0) return null;
+    var g = gcd(w, i);
+    if (w / g <= 10 && i / g <= 10) return (w / g) + ':' + (i / g);
+    return w >= i ? grams(w / i) + ':1' : '1:' + grams(i / w);
+  }
 
   /** 器具の欄：器具（その他はメモ）→ 形の名前 → 「器具を問わない」（アプリの recipeDripperLabel） */
   function dripperLabel(r) {
@@ -71,7 +98,25 @@
   /** 器具などのチップ（抽出方法・器具・提供スタイル） */
   function chipTexts(r) { return [label(L.method, r.brew_method), dripperLabel(r), label(L.serve, r.serve_style)].filter(Boolean); }
 
-  if (typeof module !== 'undefined' && module.exports) module.exports = { dripperLabel: dripperLabel, iceLine: iceLine, chipTexts: chipTexts, grams: grams };
+  /**
+   * 量の行（豆：湯・氷・氷の入れ方・ミルク）。[見出し, 中身] の配列。
+   * ミルクは列名 milk_ml だが g と出す（アプリと同じ。2026-10-15 本人決定。数字は換算しない）
+   */
+  function specTexts(r) {
+    var out = [['豆：湯', num(r.dose_g) + ' g : ' + num(r.water_g) + ' g（' + brewRatioText(r) + '）']];
+    if (r.serve_style === 'iced' && r.ice_g) {
+      var parts = [], total = icedTotalRatioText(r), wi = waterIceRatioText(r.water_g, r.ice_g);
+      if (total) parts.push('豆:湯+氷 ' + total);
+      if (wi) parts.push('お湯:氷 ' + wi);
+      out.push(['氷', num(r.ice_g) + ' g' + (parts.length ? '（' + parts.join('、') + '）' : '')]);
+    }
+    var il = iceLine(r);
+    if (il) out.push(['氷の入れ方', il]);
+    if (r.serve_style === 'milk' && r.milk_ml != null) out.push(['ミルク', num(r.milk_ml) + ' g']);
+    return out;
+  }
+
+  if (typeof module !== 'undefined' && module.exports) module.exports = { dripperLabel: dripperLabel, iceLine: iceLine, chipTexts: chipTexts, grams: grams, num: num, formatRatio: formatRatio, brewRatioText: brewRatioText, icedTotalRatioText: icedTotalRatioText, waterIceRatioText: waterIceRatioText, specTexts: specTexts };
   if (typeof document === 'undefined') return;
   var root = document.getElementById('recipe-root');
   if (!root) return;
@@ -144,12 +189,7 @@
     root.appendChild(el('p', { class: 'chips' }, chipTexts(r).map(function (t) { return el('span', { class: 'chip', text: t }); })));
 
     var dl = el('dl', { class: 'spec' });
-    var dose = Number(r.dose_g), water = Number(r.water_g);
-    dl.appendChild(row('豆：湯', num(r.dose_g) + ' g : ' + num(r.water_g) + ' g（' + ratio(dose, water) + '）'));
-    if (r.serve_style === 'iced' && r.ice_g) dl.appendChild(row('氷', num(r.ice_g) + ' g（豆:湯+氷 ' + ratio(dose, water + Number(r.ice_g)) + '）'));
-    var il = iceLine(r);
-    if (il) dl.appendChild(row('氷の入れ方', il));
-    if (r.serve_style === 'milk' && r.milk_ml) dl.appendChild(row('ミルク', num(r.milk_ml) + ' ml'));
+    specTexts(r).forEach(function (kv) { dl.appendChild(row(kv[0], kv[1])); });
     if (r.water_temp_c != null) dl.appendChild(row('湯温', num(r.water_temp_c) + '℃'));
     var grind = label(L.grind, r.grind);
     if (r.grinder_model) grind += '（' + r.grinder_model + (r.grinder_clicks != null ? ' ' + num(r.grinder_clicks) : '') + '）';
