@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-16T00:00:00+09:00",
+  "flags": {
+    "ads": true,
+    "reviewPrompt": true,
+    "beanNotices": true,
+    "plusAfterSave": true,
+    "instagramStories": true
+  }
+}
