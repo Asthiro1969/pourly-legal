@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-23T17:23:02+09:00",
+  "recipes": [
+    {
+      "id": "b26f2eef-db47-43d7-8545-cb13971def51",
+      "title": "Chemex (Stumptown Coffee Roasters)",
+      "note": "Prep: place the filter with the single-layer side facing away from the spout, rinse it with hot water and discard the water. Add the coffee, give it a gentle shake to level the bed and tare the scale.\nA larger brew in a big Chemex: bloom, then pour in three goes in all, up to 700 g. The original guide uses 205 °F (about 96 ℃). Remove the filter at 4:00.",
+      "dripperNote": "8-cup",
+      "sourceName": "Stumptown Coffee Roasters",
+      "steps": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "eeb79039-c30e-4ded-8dec-f9a7b8e3bf37",
+      "title": "Clever (Clever Coffee Brewers)",
+      "note": "Prep: fold the filter along its seam, put it in and rinse with hot water to warm the brewer too. Discard the water and tare the scale.\nAn immersion recipe: the water goes in first, then the coffee. Put the lid on and wait, stir, then set the brewer on your cup to drain. Finish at 2:30 (2:45 at the latest). The original guide gives no grind size, so the setting here is a guide.",
+      "dripperNote": null,
+      "sourceName": "Clever Coffee Brewers",
+      "steps": [
+        "Add the water first",
+        "Add the coffee and stir; put the lid on by 0:25",
+        "Take the lid off and stir twice",
+        "Set it on your cup to start draining; stir four times",
+        "Lid on and wait; remove at 2:30 (2:45 at the latest)"
+      ]
+    },
+    {
+      "id": "d57fbeaf-b1ea-44ad-a09f-2ec2c229ce0a",
+      "title": "Geometry brew guide (Onyx Coffee Lab)",
+      "note": "Onyx’s brew guide for each blend. The source uses 205 °F (about 96 ℃), a 725 µm grind and a 1:16 ratio. Pour in a spiral each time.",
+      "dripperNote": "ORIGAMI or HARIO V60",
+      "sourceName": "Onyx Coffee Lab, “Geometry” brew guide",
+      "steps": [
+        null,
+        "In a spiral",
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "f7936c86-dc88-482b-9542-75ae6cb8acf6",
+      "title": "HARIO Switch (Ole Kristian Bøen)",
+      "note": "Prep: close the switch, rinse the filter with hot water and add the coffee.\nBloom with 50 g for 40 seconds, open the switch and pour 100 g in the centre, close it at 1:30 and pour 90 g in circles, then open it at 2:10 to drain. Aim for 3:00–3:15.",
+      "dripperNote": null,
+      "sourceName": "Ole Kristian Bøen / HARIO Europe, “Switch recipe”",
+      "steps": [
+        null,
+        null,
+        null,
+        "In the centre",
+        null,
+        "In circles",
+        null,
+        "Aim for 3:00–3:15"
+      ]
+    },
+    {
+      "id": "b648da7b-e87f-4972-bac3-d89daa192cb7",
+      "title": "Kalita 102 (Caffe Luxxe)",
+      "note": "Prep: rinse the brewer and filter with about 250 g of hot water and discard it.\nPour 100 g over the whole bed to bloom; after 30 seconds, pour 300 g slowly in a spiral from the centre outwards (400 g in total). Brew time is about 3:30. The source gives 195–205 °F; 93 ℃ is the midpoint. It lists 35 g for blends.",
+      "dripperNote": "Kalita 102 (wedge, three holes)",
+      "sourceName": "Caffe Luxxe, “How to brew Kalita 102”",
+      "steps": [
+        "Pour in a zigzag to wet all the grounds",
+        "Spiral from the centre outwards",
+        "Aim for about 3:30 (±15 s)"
+      ]
+    },
+    {
+      "id": "6ba48157-f72c-4dbe-8a2f-ff7a5aeb32b1",
+      "title": "Kalita Wave 155 (Drop Coffee Roasters)",
+      "note": "Prep: rinse the filter with hot water and add the coffee.\nWet all the grounds with 40–50 g first (50 g here), wait 20–30 seconds, then pour to 100 g and keep adding a little at a time: 150 g, 200 g, 260 g. The source gives no grind size: go coarser if it tastes bitter, finer if it tastes sour. Aim for a brew time of 2:45–3:00.",
+      "dripperNote": "155",
+      "sourceName": "Drop Coffee Roasters, “This is how we brew Kalita Wave”",
+      "steps": [
+        "Wet all the grounds",
+        "Wait 20–30 s first",
+        null,
+        null,
+        null,
+        "Aim for 2:45–3:00"
+      ]
+    },
+    {
+      "id": "1b703748-eb6d-4aed-99fa-beff5c514248",
+      "title": "Kalita Wave 155 (Sample Coffee Roasters)",
+      "note": "Prep: rinse the filter with hot water, add the coffee and level the bed.\nBloom with 45 g for 45 seconds, then pour to 110 g and 250 g: three pours in all. The source gives no water temperature (just “off the boil”), so 95 ℃ is a placeholder. No grind size is given either, so the setting is a guide. Aim for 3–4 minutes.",
+      "dripperNote": "155",
+      "sourceName": "Sample Coffee Roasters, “Kalita Wave”",
+      "steps": [
+        null,
+        null,
+        "Swirl gently",
+        "Aim for 3–4 min"
+      ]
+    },
+    {
+      "id": "cb811292-4f30-4f01-bb5c-70796e4207ba",
+      "title": "Kalita Wave (Kurasu Kyoto)",
+      "note": "Prep: warm the dripper and server, and give the filter a quick rinse with hot water. Add the coffee, give it a gentle shake to level the bed and tare the scale.\nA slightly coarser Wave recipe: bloom, then finish in two pours. Brew time is 2:30–2:45. The original guide uses 90–93 ℃; 92 ℃ is set here.",
+      "dripperNote": null,
+      "sourceName": "Kurasu Kyoto",
+      "steps": [
+        null,
+        "Between 0:30 and 0:40",
+        null,
+        "Aim for 2:30–2:45"
+      ]
+    },
+    {
+      "id": "b78f7316-a776-4925-9187-aa0ad2403126",
+      "title": "Kalita Wave (LIGHT UP COFFEE)",
+      "note": "Prep: run hot water through the whole filter to wet it and discard the water. Add the coffee and shake the dripper to level the bed.\nAfter the bloom, pour in four stages roughly every 30 seconds, up to 240 g. Brew time is 2:30–3:00.",
+      "dripperNote": "155 / 185",
+      "sourceName": "LIGHT UP COFFEE",
+      "steps": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Aim for 2:30–3:00"
+      ]
+    },
+    {
+      "id": "0a5d34ca-a029-4419-a393-a1f5568178fa",
+      "title": "ORIGAMI Air (27 COFFEE ROASTERS)",
+      "note": "Prep: put in the filter, rinse it with hot water, add the coffee and level the bed.\nBloom with 30 g for 30 seconds, pour 70 g in a small circle about 2.5 cm across (100 g in total), pour 50 g once it has drained (150 g in total), then 50 g in the centre just before it drains. The source gives no times from the third pour on and no total time, so those are a guide here. Light roast, 12 g, about 93 ℃.",
+      "dripperNote": "ORIGAMI Air",
+      "sourceName": "27 COFFEE ROASTERS, “ORIGAMI Air drip recipe”",
+      "steps": [
+        "In circles",
+        "In a small circle (about 2.5 cm), over 10–15 s",
+        "Once it has drained. Times are a guide",
+        "A single pour in the centre. Times are a guide",
+        "Total time isn’t given in the source; this is a guide"
+      ]
+    },
+    {
+      "id": "26c91762-95d7-4db3-999d-66efc27ce9ee",
+      "title": "ORIGAMI × FUGLEN (Mika Jackson)",
+      "note": "Prep: put in the filter and rinse it with hot water. Add the coffee and shake the dripper to level the bed.\nFrom ORIGAMI’s feature article. After the bloom, swirl the dripper to even out the bed, and finish with a single pour in the centre. Stir with a spoon at the end (leave the dripper on and stir). The source uses 90–93 ℃. It pours up to 80 g between 0:40 and 2:00, then carries on in the centre up to 250 g (no times given).",
+      "dripperNote": "ORIGAMI Dripper Air S + cone filter",
+      "sourceName": "ORIGAMI, “ORIGAMI × FUGLEN COFFEE ROASTERS Vol.1”",
+      "steps": [
+        "Swirl the dripper",
+        "Swirl the dripper to even out the bed",
+        "Times are a guide. Carry on with a single pour in the centre",
+        "Stir with a spoon to even it out. Finish at 2:00–2:30"
+      ]
+    },
+    {
+      "id": "a1a96ed1-5882-4768-9ccd-6da47ae9d300",
+      "title": "ORIGAMI × KOPIKALYAN TOKYO",
+      "note": "Prep: put in the filter and rinse it with hot water. Add the coffee and shake the dripper to level the bed.\nFor light to medium roasts. Five pours, one every 30 seconds. The source’s grind is 24–25 clicks on a Comandante. Finish at 2:30.",
+      "dripperNote": "ORIGAMI Dripper Air S + cone filter (1–2 cup)",
+      "sourceName": "ORIGAMI, “ORIGAMI × KOPIKALYAN TOKYO Vol.3”",
+      "steps": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "95b8e81c-1331-4c55-91d4-c2f1f409f01f",
+      "title": "ORIGAMI × THE COFFEESHOP",
+      "note": "Prep: put in the filter and rinse it with hot water. Add the coffee and shake the dripper to level the bed.\nFor light to medium roasts. A rhythm of pouring for 10 seconds, then waiting 10 seconds. Stir five times during the bloom. Yields about 270 g in 2:15–2:30.",
+      "dripperNote": "ORIGAMI Dripper S + cone filter (1–2 cup)",
+      "sourceName": "ORIGAMI, “Brewing recipe using the ORIGAMI dripper, with THE COFFEESHOP Vol.2”",
+      "steps": [
+        "Stir 5 times; 40 s",
+        "Over 10 s",
+        "Pour for 10 s, wait 10 s",
+        null,
+        null,
+        null,
+        "Finish at 2:15–2:30"
+      ]
+    },
+    {
+      "id": "d3c14a00-4cfb-4393-b825-1599a230714f",
+      "title": "ORIGAMI iced coffee (Kurasu Kyoto)",
+      "note": "Prep: rinse the filter with hot water, discard the water and add 13 g of coffee.\nBrew 140 g hot in three pours. Once it has drained, add 150 g of ice to the server and stir well until fully chilled. The source says you can adjust the ice to taste. Aim for 1:45–2:00.",
+      "dripperNote": null,
+      "sourceName": "Kurasu Kyoto, “ORIGAMI dripper iced coffee”",
+      "steps": [
+        "Within 10 s",
+        "Within 10 s",
+        "Once drained, add the ice and stir",
+        "Aim for 1:45–2:00"
+      ]
+    },
+    {
+      "id": "5babc523-f74a-4a49-9da1-17c2d8c46a48",
+      "title": "Pour over (Blue Bottle Coffee)",
+      "note": "Prep: put the coffee in the filter and give the dripper a gentle shake to level the surface. Tare the scale before you start.\nBlue Bottle’s brew guide. The original uses 20–27 g of coffee and 195–205 °F (about 90–96 ℃); 24 g and 93 ℃ are set here. Pour each time in a spiral from the centre outwards and back in, over about 10 seconds.",
+      "dripperNote": "The source doesn’t specify a dripper",
+      "sourceName": "Blue Bottle Coffee, “Pour Over Brew Guide”",
+      "steps": [
+        "Spiral 3 turns out, 3 turns in, over 10 s",
+        "Spiral 5 turns out, 5 turns in",
+        "Same again",
+        "Over 10 s",
+        "Aim for 2:30–3:30"
+      ]
+    },
+    {
+      "id": "9d93a9da-c131-4d95-a642-a7887b7b03f6",
+      "title": "Pourover (Tim Wendelboe)",
+      "note": "Prep: rinse the filter with hot water to warm the dripper and discard the water. Add the coffee, give it a gentle shake to level the bed and tare the scale.\nA ratio of 65 g/L. During the bloom, stir with a teaspoon to wet all the grounds. Pour over 2–2.5 minutes, then remove after about another minute. If it runs long, grind coarser; if it runs short, grind finer. The source gives no water temperature, so 96 ℃ is a placeholder.",
+      "dripperNote": "The source doesn’t specify a dripper",
+      "sourceName": "Tim Wendelboe, “How to brew pourover and filter coffee”",
+      "steps": [
+        "Stir with a teaspoon to wet all the grounds",
+        null,
+        "Times are a guide. Keep pouring in circles; finish pouring by 2:00–2:30",
+        "Aim for about 1 min after the last pour"
+      ]
+    },
+    {
+      "id": "1835b3d7-2808-4323-a67a-eae85dda9a71",
+      "title": "Ultimate V60 (James Hoffmann)",
+      "note": "Prep: rinse the filter with hot water to remove any papery taste and warm the dripper. Add the coffee in the middle and make a small well in the centre.\nThe HARIO V60 Ambassadors version. Swirl during the bloom; after the last pour, stir once one way and once the other with a spoon, then swirl again before it drains. The source’s grind is fine-medium.",
+      "dripperNote": "Plastic V60",
+      "sourceName": "James Hoffmann / HARIO Europe, “V60 Ambassadors”",
+      "steps": [
+        "Twice the coffee’s weight in water. Swirl in a circle",
+        "Over 30 s",
+        "Over 30 s. Slowly and gently",
+        "Spoon: once clockwise, once anticlockwise, then a gentle swirl",
+        "Aim to finish by 3:30"
+      ]
+    },
+    {
+      "id": "936a090e-b92d-4b18-9bc1-750ddbcbf5b2",
+      "title": "V60, 6 pours (April Coffee / Patrik Rolf)",
+      "note": "Six pours of 50 g. Wait 40 seconds after the first pour, then 30 seconds between the rest. Pour every time in circles, fairly vigorously, so the water stirs the grounds. The source specifies water of 90–110 ppm hardness. Brew time is 3:20–3:30.",
+      "dripperNote": null,
+      "sourceName": "April Coffee Roasters, “How we Brew Coffee with a V60”",
+      "steps": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Aim for 3:20–3:30"
+      ]
+    },
+    {
+      "id": "7d98cbf9-24d6-4301-8fba-92f02fd87a41",
+      "title": "V60 iced coffee (ONIBUS COFFEE)",
+      "note": "Prep: rinse the filter with hot water, add 18 g of coffee and level the bed.\nStir the first 50 g with a spoon and bloom for 30 seconds, then pour 30 g and 70 g. Brew 150 g hot, add 80 g of ice to the server and let it melt completely, then pour into a glass with the other 80 g of ice. About 2 minutes in all.",
+      "dripperNote": "01",
+      "sourceName": "ONIBUS COFFEE, “Drip iced coffee”",
+      "steps": [
+        "Stir with a spoon",
+        "Circle from the centre out, then back in",
+        "Stir once more and let it drain. Half the ice into the server",
+        "Pour into a glass with the rest of the ice. About 2 min in all"
+      ]
+    },
+    {
+      "id": "82807a99-2063-4167-8600-cba470b54ee3",
+      "title": "V60-03, 2 cups (THE COFFEESHOP)",
+      "note": "Prep: rinse the filter with hot water, add the coffee and level the bed.\nPour 70 g over 10 seconds to bloom, then 80 g from 0:45, 90 g from 1:05, 90 g from 1:25, 70 g from 1:45 and 60 g from 2:05 (460 g in total). Yields about 400 g; brew time is 2:45–3:00.",
+      "dripperNote": "V60-03",
+      "sourceName": "THE COFFEESHOP, “V60-03 brew guide for 2 cups”",
+      "steps": [
+        "Over 10 s",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Aim for 2:45–3:00"
+      ]
+    },
+    {
+      "id": "4c7d1a41-266e-48ba-a196-5bf79a917e56",
+      "title": "V60 (Kurasu Kyoto)",
+      "note": "Prep: give the filter a quick rinse with hot water to remove any papery taste. Add the coffee, make a small well in the middle and tare the scale.\nOne cup with a smaller dose. Pour every 30 seconds, give it a light stir at the end and let it drain by about 2:00. The original guide uses 92–96 ℃; 94 ℃ is set here.",
+      "dripperNote": null,
+      "sourceName": "Kurasu Kyoto",
+      "steps": [
+        null,
+        null,
+        null,
+        "Gently. Drains by about 2:00"
+      ]
+    },
+    {
+      "id": "142d7441-cbc8-4b3d-aa21-fa211e738c0a",
+      "title": "V60 (Scott Rao)",
+      "note": "Prep: put the coffee in the dripper and make a well in the middle with your finger.\nPour in three stages, shaking the dripper each time to level the bed: firmly at the bloom, gently after that. Brew time is 4:00–4:30.",
+      "dripperNote": null,
+      "sourceName": "Scott Rao (HARIO UK ambassador article)",
+      "steps": [
+        "Shake firmly",
+        "Shake gently",
+        "Times are a guide. Once about 70% has drained. Shake gently",
+        "Aim for 4:00–4:30"
+      ]
+    },
+    {
+      "id": "e0ffafea-b20d-4479-9bb9-ae82790ed748",
+      "title": "V60 (Scrop COFFEE ROASTERS)",
+      "note": "Prep: rinse the filter with hot water, add the coffee and level the bed.\nPour 50 g over 10 seconds, then wait 20 seconds; repeat five times. Each pour’s start time and running total are worked out from the source’s description (“50 g, wait 20 seconds”, repeated); the original doesn’t give totals. The water temperature is “around 90 ℃”. It also gives a 2-cup version (30 g / 500 g).",
+      "dripperNote": null,
+      "sourceName": "Scrop COFFEE ROASTERS, “How to hand drip”",
+      "steps": [
+        "Pour over 10 s, then wait 20 s",
+        "Pour over 10 s, then wait 20 s",
+        "Pour over 10 s, then wait 20 s",
+        "Pour over 10 s, then wait 20 s",
+        "Over 10 s",
+        null
+      ]
+    },
+    {
+      "id": "d573f1ed-0bde-4873-a571-c151599cf367",
+      "title": "Café au lait (BASTET COFFEE)",
+      "note": "Prep: put in the filter, rinse it with hot water, add the coffee and level the bed.\nPour up to 200 g in five stages, then combine the coffee with 100 g of warm milk. Add 3–5 g of sugar if you like. The source is an article for light roasts and gives neither the yield nor the total time.",
+      "dripperNote": "Cone dripper (the source uses ORIGAMI as an example)",
+      "sourceName": "BASTET COFFEE, “Café au lait”",
+      "steps": [
+        null,
+        null,
+        null,
+        null,
+        "Add the milk (half the amount of water)",
+        "Total time isn’t given in the source; this is a guide"
+      ]
+    },
+    {
+      "id": "ab7741c9-a63d-4c71-8596-1a67d1addef1",
+      "title": "KONO Meimon (THE COFFEESHOP)",
+      "note": "Prep: put in the filter, rinse it with hot water, add the coffee and level the bed.\nPour little by little in five stages: 40 g, 90 g, 150 g, 220 g and 300 g. The source gives each time as a range such as “40–50 seconds”; the earlier end is used here. It should finish in about 110 seconds. This is the method from a dripper comparison article.",
+      "dripperNote": null,
+      "sourceName": "THE COFFEESHOP, “Dripper test: KONO Meimon”",
+      "steps": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Aim to finish in about 110 s"
+      ]
+    },
+    {
+      "id": "3b962a2f-bff0-4f8a-915d-9c18d4bd390e",
+      "title": "French press (Stumptown)",
+      "note": "Prep: warm the press with hot water and discard it.\nAdd the coffee, pour 450 g to wet all the grounds and put the lid on (don’t press yet). At 1:00, take the lid off, stir, top up to 850 g and put the lid back on. At 4:00, press the plunger down slowly. Grind to about the size of breadcrumbs. Use water just off the boil (about 205 °F).",
+      "dripperNote": "Bodum 8-cup",
+      "sourceName": "Stumptown Coffee Roasters, “French Press brew guide”",
+      "steps": [
+        "Wet all the grounds and put the lid on",
+        "Take the lid off, stir and add the rest of the water",
+        "Press down slowly"
+      ]
+    },
+    {
+      "id": "a215845e-94fe-453e-bfe7-485a988e07a6",
+      "title": "Melitta flow-control filter (MORIHICO.)",
+      "note": "Prep: put in the filter and set the flow dial to 0.\nAn immersion method: pour 225 g all at once and stir the grounds. At 1:30 turn the dial to 1, and at 2:00 to 4 to let it drain fully. Aim for 2:30–3:00. The grind is the source’s (vol.1) “medium”. The dial is a feature of this filter and can’t be reproduced with a regular Melitta.",
+      "dripperNote": "Flow-control filter 1×2 (dial 0–4)",
+      "sourceName": "Melitta Japan, “Flow-control coffee filter recipe” (MORIHICO. 佐藤京兵)",
+      "steps": [
+        "All at once with the dial at 0. Stir the grounds",
+        "Turn the dial to 1",
+        "Turn the dial to 4",
+        "Aim for 2:30–3:00"
+      ]
+    },
+    {
+      "id": "9ec2f710-41e7-4d10-aad5-3dfdbd9d3f7a",
+      "title": "Melitta flow-control filter (SAZA COFFEE)",
+      "note": "Prep: put in the filter and set the dial to 0.\nBloom with 80 g for 40 seconds, turn the dial to 2 and pour 170 g (250 g in total), then at 1:20 turn it to 4 to let it drain fully. Aim for 2:15–2:30. The source doesn’t say when to start the second pour, so it’s set right after the bloom. Water at 83–86 ℃.",
+      "dripperNote": "Flow-control filter 1×2 (dial 0–4)",
+      "sourceName": "Melitta Japan, “Flow-control coffee filter recipe” (SAZA COFFEE 飯髙亘)",
+      "steps": [
+        "Bloom for 40 s with the dial at 0",
+        "Turn the dial to 2",
+        null,
+        "Turn the dial to 4",
+        "Aim for 2:15–2:30"
+      ]
+    },
+    {
+      "id": "166cad90-e447-4221-a37b-f23649c767d7",
+      "title": "Tetsu Kasuya’s 4:6 method (basic)",
+      "note": "Tetsu Kasuya’s 4:6 method. The first 40% (120 g) shapes the flavour; the last 60% (180 g) sets the strength. The source sets the water temperature by roast: light 93 ℃, medium 88 ℃, dark 83 ℃. The medium-roast 88 ℃ is set here.",
+      "dripperNote": null,
+      "sourceName": "Tetsu Kasuya (PHILOCOFFEA), “What is the 4:6 method?”",
+      "steps": [
+        null,
+        "End of the first 40%",
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}
